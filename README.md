@@ -23,8 +23,8 @@ mkdir dataset
 cd dataset
 wget https://cv.snu.ac.kr/research/VDSR/train_data.zip
 wget https://cv.snu.ac.kr/research/VDSR/test_data.zip
-unzip train_data.zip
-unzip test_data.zip
+unzip train_data.zip;unzip test_data.zip
+rm train_data.zip;rm test_data.zip
 cd ..
 ```
 
