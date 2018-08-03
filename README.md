@@ -1,5 +1,6 @@
 # Noise2Noise
-https://news.developer.nvidia.com/ai-can-now-fix-your-grainy-photos-by-only-looking-at-grainy-photos/<br><br>
+https://news.developer.nvidia.com/ai-can-now-fix-your-grainy-photos-by-only-looking-at-grainy-photos/<br>
+![01](https://github.com/PINTO0309/noise2noise/blob/PINTO0309work/media/01.png)<br><br>
 
 This is an unofficial and partial Keras implementation of "Noise2Noise: Learning Image Restoration without Clean Data" [1].
 
