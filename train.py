@@ -56,47 +56,59 @@ def get_args():
 
 
 def main():
-    args = get_args()
-    image_dir = args.image_dir
-    test_dir = args.test_dir
-    image_size = args.image_size
-    batch_size = args.batch_size
-    nb_epochs = args.nb_epochs
-    lr = args.lr
-    steps = args.steps
-    loss_type = args.loss
-    output_path = Path(__file__).resolve().parent.joinpath(args.output_path)
-    model = get_srresnet_model()
-    opt = Adam(lr=lr)
-    model.compile(optimizer=opt, loss=loss_type, metrics=[PSNR])
-    source_noise_model = get_noise_model(args.source_noise_model)
-    target_noise_model = get_noise_model(args.target_noise_model)
-    val_noise_model = get_noise_model(args.val_noise_model)
-    generator = NoisyImageGenerator(image_dir, source_noise_model, target_noise_model, batch_size=batch_size,
-                                    image_size=image_size)
-    val_generator = ValGenerator(test_dir, val_noise_model)
-    output_path.mkdir(parents=True, exist_ok=True)
-    callbacks = [
-        LearningRateScheduler(schedule=Schedule(nb_epochs, lr)),
-        ModelCheckpoint(str(output_path) + "/weights.{epoch:03d}-{val_loss:.3f}-{val_PSNR:.5f}.hdf5",
-                        monitor="val_PSNR",
-                        verbose=1,
-                        mode="max",
-                        save_best_only=True)
-    ]
+	try:
+	    args = get_args()
+	    image_dir = args.image_dir
+	    test_dir = args.test_dir
+	    image_size = args.image_size
+	    batch_size = args.batch_size
+	    nb_epochs = args.nb_epochs
+	    lr = args.lr
+	    steps = args.steps
+	    loss_type = args.loss
+	    output_path = Path(__file__).resolve().parent.joinpath(args.output_path)
+	    model = get_srresnet_model()
+	    opt = Adam(lr=lr)
+	    model.compile(optimizer=opt, loss=loss_type, metrics=[PSNR])
+	    print("---- 1")
+	    source_noise_model = get_noise_model(args.source_noise_model)
+	    print("---- 2")
+	    target_noise_model = get_noise_model(args.target_noise_model)
+	    print("---- 3")
+	    val_noise_model = get_noise_model(args.val_noise_model)
+	    print("---- 4")
+	    generator = NoisyImageGenerator(image_dir, source_noise_model, target_noise_model, batch_size=batch_size,
+	                                    image_size=image_size)
+	    print("---- 5")
+	    val_generator = ValGenerator(test_dir, val_noise_model)
+	    print("---- 6")
+	    output_path.mkdir(parents=True, exist_ok=True)
+	    print("---- 7")
+	    callbacks = [
+	        LearningRateScheduler(schedule=Schedule(nb_epochs, lr)),
+	        ModelCheckpoint(str(output_path) + "/weights.{epoch:03d}-{val_loss:.3f}-{val_PSNR:.5f}.hdf5",
+	                        monitor="val_PSNR",
+	                        verbose=1,
+	                        mode="max",
+	                        save_best_only=True)
+	    ]
+	    print("---- 8")
+	    hist = model.fit_generator(generator=generator,
+	                               steps_per_epoch=steps,
+	                               epochs=nb_epochs,
+	                               validation_data=val_generator,
+	                               verbose=1,
+	                               callbacks=callbacks,
+	                               use_multiprocessing=True,
+	                               workers=1
+	                               )
+	    print("---- 9")
 
-    hist = model.fit_generator(generator=generator,
-                               steps_per_epoch=steps,
-                               epochs=nb_epochs,
-                               validation_data=val_generator,
-                               verbose=1,
-                               callbacks=callbacks,
-                               use_multiprocessing=True,
-                               workers=8
-                               )
+	    np.savez(str(output_path.joinpath("history.npz")), history=hist.history)
 
-    np.savez(str(output_path.joinpath("history.npz")), history=hist.history)
-
+	except:
+	    import traceback
+	    traceback.print_exc()
 
 if __name__ == '__main__':
     main()
