@@ -21,6 +21,7 @@ There are several things different from the original paper
 ```bash
 cd ~
 git clone -b PINTO0309work https://github.com/PINTO0309/noise2noise.git
+cd noise2noise
 mkdir dataset
 cd dataset
 wget https://cv.snu.ac.kr/research/VDSR/train_data.zip
