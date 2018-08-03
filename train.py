@@ -100,7 +100,7 @@ def main():
 	                               verbose=1,
 	                               callbacks=callbacks,
 	                               use_multiprocessing=True,
-	                               workers=1
+	                               workers=8
 	                               )
 	    print("---- 9")
 
