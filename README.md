@@ -1,4 +1,6 @@
 # Noise2Noise
+AI can now fix your grainy photos by only looking at grainy photos.<br>
+**This is the Fork repository of https://github.com/yu4u/noise2noise.git.**<br><br>
 https://news.developer.nvidia.com/ai-can-now-fix-your-grainy-photos-by-only-looking-at-grainy-photos/<br>
 ![01](https://github.com/PINTO0309/noise2noise/blob/PINTO0309work/media/01.png)<br><br>
 
