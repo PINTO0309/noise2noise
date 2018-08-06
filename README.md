@@ -27,13 +27,6 @@ There are several things different from the original paper
 cd ~
 git clone -b PINTO0309work https://github.com/PINTO0309/noise2noise.git
 cd noise2noise
-mkdir dataset
-cd dataset
-wget https://cv.snu.ac.kr/research/VDSR/train_data.zip
-wget https://cv.snu.ac.kr/research/VDSR/test_data.zip
-unzip train_data.zip;unzip test_data.zip
-rm train_data.zip;rm test_data.zip
-cd ..
 ```
 
 ### Train Model
