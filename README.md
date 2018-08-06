@@ -116,6 +116,12 @@ Denoising result by noise target model:
 
 <img src="result/baby_GT_gaussian.png" width="800px">
 
+```
+python3 test_model.py --weight_file gaussian/weights.1000steps_x_60epoch.hdf5 --image_dir dataset/1 --test_noise_model gaussian,40,40
+```
+
+![02](https://github.com/PINTO0309/noise2noise/raw/PINTO0309work/media/02.png)<br>
+
 ##### Text insertion
 Denoising result by clean target model
 
