@@ -12,7 +12,10 @@ There are several things different from the original paper
 - Model (original: RED30 [3], this repository: SRResNet [4])
 
 ## Dependencies
-- Keras, TensorFlow, NumPy, OpenCV
+- Keras 2.2.2
+- TensorFlow 1.4.1
+- NumPy 1.15.0
+- OpenCV 3.4.1
 
 ## Train Noise2Noise
 
