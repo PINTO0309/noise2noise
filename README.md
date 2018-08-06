@@ -34,23 +34,24 @@ cd ..
 ### Train Model
 
 #### Train with Gaussian noise
+ex) Quadro P2000
 ```bash
 # train model using (noise, noise) pairs (noise2noise)
-python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 8 --lr 0.001 --output_path gaussian
+python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 4 --lr 0.001 --output_path gaussian
 
 # train model using (noise, clean) paris (standard training)
-python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 8 --lr 0.001 --target_noise_model clean --output_path clean
+python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 4 --lr 0.001 --target_noise_model clean --output_path clean
 ```
 
 
 #### Train with text insertion
-
+ex) Quadro P2000
 ```bash
 # train model using (noise, noise) pairs (noise2noise)
-python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 8 --lr 0.001 --source_noise_model text,0,50 --target_noise_model text,0,50 --val_noise_model text,25,25 --loss mae --output_path text_noise
+python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 4 --lr 0.001 --source_noise_model text,0,50 --target_noise_model text,0,50 --val_noise_model text,25,25 --loss mae --output_path text_noise
 
 # train model using (noise, clean) paris (standard training)
-python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 8 --lr 0.001 --source_noise_model text,0,50 --target_noise_model clean --val_noise_model text,25,25 --loss mae --output_path text_clean
+python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 4 --lr 0.001 --source_noise_model text,0,50 --target_noise_model clean --val_noise_model text,25,25 --loss mae --output_path text_clean
 ```
 
 Please see `python3 train.py -h` for optional arguments.
