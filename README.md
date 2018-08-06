@@ -34,7 +34,7 @@ cd ..
 ### Train Model
 
 #### Train with Gaussian noise
-ex) Quadro P2000
+ex) Quadro P2000 VRAM:5GB
 ```bash
 # train model using (noise, noise) pairs (noise2noise)
 python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 4 --lr 0.001 --output_path gaussian
@@ -45,7 +45,7 @@ python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 1
 
 
 #### Train with text insertion
-ex) Quadro P2000
+ex) Quadro P2000 VRAM:5GB
 ```bash
 # train model using (noise, noise) pairs (noise2noise)
 python3 train.py --image_dir dataset/291 --test_dir dataset/Set14 --image_size 128 --batch_size 4 --lr 0.001 --source_noise_model text,0,50 --target_noise_model text,0,50 --val_noise_model text,25,25 --loss mae --output_path text_noise
