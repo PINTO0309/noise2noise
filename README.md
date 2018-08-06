@@ -16,6 +16,8 @@ There are several things different from the original paper
 - TensorFlow 1.4.1
 - NumPy 1.15.0
 - OpenCV 3.4.1
+- CUDA 8.0
+- cuDNN 5.1
 
 ## Train Noise2Noise
 
