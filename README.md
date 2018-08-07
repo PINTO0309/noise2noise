@@ -125,7 +125,7 @@ Denoising result by noise target model:
 <img src="result/baby_GT_text_noise.png" width="800px">
 
 ```
-python3 test_model.py --weight_file text_noise/weights.1000steps_x_60epoch.hdf5 --image_dir dataset/1 --test_noise_model test,20,20
+python3 test_model.py --weight_file text_noise/weights.1000steps_x_60epoch.hdf5 --image_dir dataset/1 --test_noise_model text,20,20
 ```
 
 ### TODOs
