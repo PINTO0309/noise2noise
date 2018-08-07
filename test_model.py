@@ -41,6 +41,7 @@ def main():
     image_paths = list(Path(image_dir).glob("*.*"))
 
     for image_path in image_paths:
+        print(image_path)
         image = cv2.imread(str(image_path))
         h, w, _ = image.shape
         out_image = np.zeros((h, w * 3, 3), dtype=np.uint8)
