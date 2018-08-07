@@ -128,6 +128,8 @@ Denoising result by noise target model:
 python3 test_model.py --weight_file text_noise/weights.1000steps_x_60epoch.hdf5 --image_dir dataset/1 --test_noise_model text,20,20
 ```
 
+![03](https://github.com/PINTO0309/noise2noise/raw/PINTO0309work/media/03.png)<br>
+
 ### TODOs
 
 - [x] Compare (noise, clean) training and (noise, noise) training
