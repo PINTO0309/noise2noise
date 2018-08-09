@@ -116,7 +116,6 @@ python3 test_model.py --weight_file gaussian/weights.1000steps_x_60epoch.hdf5 --
 ![02](https://github.com/PINTO0309/noise2noise/raw/PINTO0309work/media/02.png)<br>
 
 ```
-# pascal-voc2012
 python3 test_model.py --weight_file gaussian/weights.053-75.843-29.84944.hdf5 --image_dir dataset/1 --test_noise_model gaussian,50,50 --output_dir result/gaussian/1
 ```
 
