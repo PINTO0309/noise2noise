@@ -115,6 +115,12 @@ python3 test_model.py --weight_file gaussian/weights.1000steps_x_60epoch.hdf5 --
 
 ![02](https://github.com/PINTO0309/noise2noise/raw/PINTO0309work/media/02.png)<br>
 
+```
+python3 test_model.py --weight_file gaussian/weights.053-75.843-29.84944.hdf5 --image_dir dataset/1 --test_noise_model gaussian,50,50 --output_dir result/gaussian/1
+```
+
+![04](https://github.com/PINTO0309/noise2noise/raw/PINTO0309work/media/04.png)<br>
+
 ##### Text insertion
 Denoising result by clean target model
 
@@ -129,12 +135,6 @@ python3 test_model.py --weight_file text_noise/weights.1000steps_x_60epoch.hdf5 
 ```
 
 ![03](https://github.com/PINTO0309/noise2noise/raw/PINTO0309work/media/03.png)<br>
-
-```
-python3 test_model.py --weight_file gaussian/weights.053-75.843-29.84944.hdf5 --image_dir dataset/1 --test_noise_model gaussian,50,50 --output_dir result/gaussian/1
-```
-
-![04](https://github.com/PINTO0309/noise2noise/raw/PINTO0309work/media/04.png)<br>
 
 ### TODOs
 
