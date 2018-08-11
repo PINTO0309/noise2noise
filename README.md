@@ -13,11 +13,11 @@ There are several things different from the original paper
 
 ## Dependencies
 - Keras 2.2.2
-- TensorFlow 1.4.1
+- TensorFlow 1.10.0
 - NumPy 1.15.0
 - OpenCV 3.4.1
-- CUDA 8.0
-- cuDNN 5.1
+- CUDA 9.0
+- cuDNN 7.2
 
 ## Train Noise2Noise
 
